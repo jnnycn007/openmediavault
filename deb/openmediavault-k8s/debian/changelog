@@ -1,6 +1,8 @@
 openmediavault-k8s (8.2.4-2) stable; urgency=medium
 
   * Hardening the K8s::applyRecipe RPC.
+  * Use K3S v1.35.4+k3s1 on new installations. Existing installations won't
+    be upgraded automatically.
 
  -- Volker Theile <volker.theile@openmediavault.org>  Sat, 02 May 2026 21:16:39 +0200
 
