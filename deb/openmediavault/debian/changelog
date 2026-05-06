@@ -1,3 +1,9 @@
+openmediavault (8.2.12-1) stable; urgency=medium
+
+  *
+
+ -- Volker Theile <volker.theile@openmediavault.org>  Wed, 06 May 2026 23:18:59 +0200
+
 openmediavault (8.2.11-1) stable; urgency=medium
 
   * Several improvements.
