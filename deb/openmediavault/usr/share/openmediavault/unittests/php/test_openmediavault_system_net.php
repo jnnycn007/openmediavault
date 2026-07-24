@@ -78,6 +78,11 @@ class NetworkInterfaceMock extends \OMV\System\Net\NetworkInterface
 
 class test_openmediavault_system_net extends \PHPUnit\Framework\TestCase
 {
+    private static function isGithubCI(): bool
+    {
+        return ("true" === getenv("GITHUB_ACTIONS"));
+    }
+
     protected function getNetworkInterfaceMock()
     {
         return new NetworkInterfaceMock();
@@ -139,6 +144,9 @@ class test_openmediavault_system_net extends \PHPUnit\Framework\TestCase
 
     public function test_real_interface()
     {
+        if (self::isGitHubCI()) {
+            $this->markTestSkipped("Skipped on GitHub CI.");
+        }
         $backend = new \OMV\System\Net\NetworkInterfaceBackend\Ethernet();
         $mngr = \OMV\System\Net\NetworkInterfaceBackend\Manager::getInstance();
         $mngr->registerBackend($backend);
