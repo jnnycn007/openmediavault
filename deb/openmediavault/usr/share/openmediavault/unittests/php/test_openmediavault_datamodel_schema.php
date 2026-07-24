@@ -128,6 +128,19 @@ class test_openmediavault_datamodel_schema extends \PHPUnit\Framework\TestCase
     /**
      * @doesNotPerformAssertions
      */
+    public function testCheckFormatDevicefile3()
+    {
+        $schema = $this->getSchema();
+        $schema->checkFormat(
+            "/dev/disk/by-id/usb-Seagate_Backup+_Hub_BK_NA8TV4CX-0:0",
+            [ "format" => "devicefile" ],
+            "field1"
+        );
+    }
+
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testCheckFormatDevicefileSata()
     {
         $schema = $this->getSchema();

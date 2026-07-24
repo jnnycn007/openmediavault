@@ -83,6 +83,11 @@ OMV_CONFIG_FILE="./../data/config.xml"
   [ "$status" -eq 0 ]
 }
 
+@test "should be a device file [3]" {
+  run omv_is_devicefile "/dev/disk/by-id/usb-Seagate_Backup+_Hub_BK_NA8TV4CX-0:0"
+  [ "$status" -eq 0 ]
+}
+
 @test "should not be a device file [1]" {
   run omv_is_devicefile "foo bar baz"
   [ "$status" -eq 1 ]

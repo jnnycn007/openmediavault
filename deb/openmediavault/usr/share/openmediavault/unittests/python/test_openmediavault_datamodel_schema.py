@@ -64,6 +64,14 @@ class SchemaTestCase(unittest.TestCase):
             "field1",
         )
 
+    def test_check_format_devicefile_3(self):
+        schema = openmediavault.datamodel.Schema({})
+        schema._check_format(
+            "/dev/disk/by-id/usb-Seagate_Backup+_Hub_BK_NA8TV4CX-0:0",
+            {"format": "devicefile"},
+            "field1",
+        )
+
     def test_check_format_devicefile_sata(self):
         schema = openmediavault.datamodel.Schema({})
         schema._check_format("/dev/sda", {"format": "devicefile"}, "field1")
